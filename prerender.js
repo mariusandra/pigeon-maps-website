@@ -55,8 +55,8 @@ devServer.listen(2014, '0.0.0.0', function (err) {
 
       console.log(`Opening ${url}`)
 
-      await page.goto(`http://localhost:2014${url}`, { waitUntil: 'networkidle' })
-      await page.waitForSelector('[data-reactroot]')
+      await page.goto(`http://localhost:2014${url}`, { waitUntil: 'networkidle2' })
+      await page.waitForSelector('#root')
 
       const html = await page.evaluate(() => {
         return document.documentElement.outerHTML

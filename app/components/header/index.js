@@ -9,8 +9,7 @@ export default class Header extends Component {
     return (
       <header className='body-header'>
         <nav>
-          <NavLink to='/' exact>Kea example</NavLink>
-          <NavLink to='/todos'>Todos</NavLink>
+          <NavLink to='/' exact>Pigeon Maps</NavLink>
 
           <a className='right' href='https://www.github.com/keajs/kea-example' target='_blank'>Fork on Github</a>
         </nav>

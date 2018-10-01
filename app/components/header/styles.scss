@@ -1,6 +1,6 @@
 header.body-header {
   width: 100%;
-  background: #fff;
+  background: #000;
   height: 50px;
   line-height: 50px;
 
@@ -11,7 +11,7 @@ header.body-header {
 
     a {
       text-decoration: none;
-      color: #666666;
+      color: #eee;
       text-transform: uppercase;
       font-family: 'Helvetica Neue', 'Arial', sans-serif;
       padding-left: 10px;
@@ -20,7 +20,7 @@ header.body-header {
 
       &.active {
         font-weight: bold;
-        color: #000;
+        color: #fff;
         border-bottom: 2px solid #000;
         height: 48px;
       }

@@ -12,7 +12,6 @@ export default () => (
     <Header />
     <div>
       <Route exact path='/' component={bundles.homepage} />
-      <Route path='/todos' component={bundles.todos} />
     </div>
   </div>
 )
