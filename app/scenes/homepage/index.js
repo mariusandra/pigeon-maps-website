@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
+import { connect } from 'kea'
 
 import Map from 'pigeon-maps'
 import Marker from 'pigeon-marker'
+
+import state from './state'
 
 const mapboxEnabled = false
 
@@ -66,34 +69,29 @@ const WikimediaAttribution = () => (
   </span>
 )
 
+@connect({
+  props: [
+    state, [
+      'values'
+    ]
+  ],
+  actions: [
+    state, [
+      'updateValues'
+    ]
+  ]
+})
 export default class App extends Component {
-  constructor (props) {
-    super(props)
-
-    this.state = {
-      center: [50.879, 4.6997],
-      zoom: 13,
-      provider: 'wikimedia',
-      metaWheelZoom: false,
-      twoFingerDrag: false,
-      animate: true,
-      animating: false,
-      zoomSnap: true,
-      mouseEvents: true,
-      touchEvents: true,
-      minZoom: 1,
-      maxZoom: 18
-    }
-  }
-
   zoomIn = () => {
-    this.setState({
+    const { updateValues } = this.actions
+    updateValues({
       zoom: Math.min(this.state.zoom + 1, 18)
     })
   }
 
   zoomOut = () => {
-    this.setState({
+    const { updateValues } = this.actions
+    updateValues({
       zoom: Math.max(this.state.zoom - 1, 1)
     })
   }
@@ -102,7 +100,8 @@ export default class App extends Component {
     if (initial) {
       console.log('Got initial bounds: ', bounds)
     }
-    this.setState({ center, zoom })
+    const { updateValues } = this.actions
+    updateValues({ center, zoom })
   }
 
   handleClick = ({ event, latLng, pixel }) => {
@@ -114,35 +113,44 @@ export default class App extends Component {
   }
 
   handleAnimationStart = () => {
-    this.setState({ animating: true })
+    const { updateValues } = this.actions
+    updateValues({ animating: true })
   }
 
   handleAnimationStop = () => {
-    this.setState({ animating: false })
+    const { updateValues } = this.actions
+    updateValues({ animating: false })
   }
 
   render () {
-    const { center, zoom, provider, animate, metaWheelZoom, twoFingerDrag, zoomSnap, mouseEvents, touchEvents, animating, minZoom, maxZoom } = this.state
+    const { values } = this.props
+    const { updateValues } = this.actions
+
+    const {
+      center,
+      zoom,
+      provider,
+      animate,
+      metaWheelZoom,
+      twoFingerDrag,
+      zoomSnap,
+      mouseEvents,
+      touchEvents,
+      animating,
+      minZoom,
+      maxZoom
+    } = values
 
     return (
       <div style={{textAlign: 'center', marginTop: 50}}>
         <div style={{maxWidth: 600, margin: '0 auto'}}>
           <Map
-            center={center}
-            zoom={zoom}
+            {...values}
             provider={providers[provider]}
             onBoundsChanged={this.handleBoundsChange}
             onClick={this.handleClick}
             onAnimationStart={this.handleAnimationStart}
             onAnimationStop={this.handleAnimationStop}
-            animate={animate}
-            metaWheelZoom={metaWheelZoom}
-            twoFingerDrag={twoFingerDrag}
-            zoomSnap={zoomSnap}
-            mouseEvents={mouseEvents}
-            touchEvents={touchEvents}
-            minZoom={minZoom}
-            maxZoom={maxZoom}
             attribution={
               isMapBox(provider)
                 ? <MapboxAttribution />
@@ -182,21 +190,21 @@ export default class App extends Component {
           ))}
         </div>
         <div style={{marginTop: 20}}>
-          <button onClick={() => this.setState({ animate: !animate })}>{animate ? '[X] animation' : '[ ] animation'}</button>
-          <button onClick={() => this.setState({ twoFingerDrag: !twoFingerDrag })}>{twoFingerDrag ? '[X] two finger drag' : '[ ] two finger drag'}</button>
-          <button onClick={() => this.setState({ metaWheelZoom: !metaWheelZoom })}>{metaWheelZoom ? '[X] meta wheel zoom' : '[ ] meta wheel zoom'}</button>
-          <button onClick={() => this.setState({ zoomSnap: !zoomSnap })}>{zoomSnap ? '[X] zoom snap' : '[ ] zoom snap'}</button>
-          <button onClick={() => this.setState({ mouseEvents: !mouseEvents })}>{mouseEvents ? '[X] mouse events' : '[ ] mouse events'}</button>
-          <button onClick={() => this.setState({ touchEvents: !touchEvents })}>{touchEvents ? '[X] touch events' : '[ ] touch events'}</button>
+          <button onClick={() => updateValues({ animate: !animate })}>{animate ? '[X] animation' : '[ ] animation'}</button>
+          <button onClick={() => updateValues({ twoFingerDrag: !twoFingerDrag })}>{twoFingerDrag ? '[X] two finger drag' : '[ ] two finger drag'}</button>
+          <button onClick={() => updateValues({ metaWheelZoom: !metaWheelZoom })}>{metaWheelZoom ? '[X] meta wheel zoom' : '[ ] meta wheel zoom'}</button>
+          <button onClick={() => updateValues({ zoomSnap: !zoomSnap })}>{zoomSnap ? '[X] zoom snap' : '[ ] zoom snap'}</button>
+          <button onClick={() => updateValues({ mouseEvents: !mouseEvents })}>{mouseEvents ? '[X] mouse events' : '[ ] mouse events'}</button>
+          <button onClick={() => updateValues({ touchEvents: !touchEvents })}>{touchEvents ? '[X] touch events' : '[ ] touch events'}</button>
         </div>
         <div style={{marginTop: 20}}>
-          minZoom: <input onChange={(e) => this.setState({ minZoom: parseInt(e.target.value) || 1 })} value={minZoom} type='number' style={{ width: 40 }} />
+          minZoom: <input onChange={(e) => updateValues({ minZoom: parseInt(e.target.value) || 1 })} value={minZoom} type='number' style={{ width: 40 }} />
           {' '}
-          maxZoom: <input onChange={(e) => this.setState({ maxZoom: parseInt(e.target.value) || 18 })} value={maxZoom} type='number' style={{ width: 40 }} />
+          maxZoom: <input onChange={(e) => updateValues({ maxZoom: parseInt(e.target.value) || 18 })} value={maxZoom} type='number' style={{ width: 40 }} />
         </div>
         <div style={{marginTop: 20}}>
           {Object.keys(markers).map(key => (
-            <button key={key} onClick={() => this.setState({ center: markers[key][0], zoom: markers[key][1] })}>{key}</button>
+            <button key={key} onClick={() => updateValues({ center: markers[key][0], zoom: markers[key][1] })}>{key}</button>
           ))}
         </div>
         <div style={{marginTop: 20}}>

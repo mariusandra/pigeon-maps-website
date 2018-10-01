@@ -4220,9 +4220,9 @@ kea-saga@^0.3.2:
   dependencies:
     babel-runtime "^6.26.0"
 
-kea@^0.27.8:
-  version "0.27.8"
-  resolved "https://registry.yarnpkg.com/kea/-/kea-0.27.8.tgz#806269096cb3a209d03a5356511c68d269c5b3bb"
+kea@^0.28.4:
+  version "0.28.4"
+  resolved "https://registry.yarnpkg.com/kea/-/kea-0.28.4.tgz#2925263913a83fb326b4f94b1dd519711679d891"
   dependencies:
     opencollective "^1.0.3"
 

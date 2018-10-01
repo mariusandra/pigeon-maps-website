@@ -30,7 +30,7 @@
     "babel-runtime": "^6.26.0",
     "es6-promise": "^4.2.4",
     "history": "^4.7.2",
-    "kea": "^0.27.8",
+    "kea": "^0.28.4",
     "kea-localstorage": "^0.2.0",
     "kea-saga": "^0.3.2",
     "nprogress": "^0.2.0",
