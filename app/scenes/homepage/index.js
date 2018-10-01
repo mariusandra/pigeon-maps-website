@@ -4,7 +4,7 @@ import { connect } from 'kea'
 import Map from 'pigeon-maps'
 import Marker from 'pigeon-marker'
 
-import state from './state'
+import logic from './logic'
 
 const mapboxEnabled = false
 
@@ -71,28 +71,31 @@ const WikimediaAttribution = () => (
 
 @connect({
   props: [
-    state, [
+    logic, [
       'values'
     ]
   ],
   actions: [
-    state, [
-      'updateValues'
+    logic, [
+      'updateValues',
+      'toggleValue'
     ]
   ]
 })
 export default class App extends Component {
   zoomIn = () => {
+    const { values: { zoom } } = this.props
     const { updateValues } = this.actions
     updateValues({
-      zoom: Math.min(this.state.zoom + 1, 18)
+      zoom: Math.min(zoom + 1, 18)
     })
   }
 
   zoomOut = () => {
+    const { values: { zoom } } = this.props
     const { updateValues } = this.actions
     updateValues({
-      zoom: Math.max(this.state.zoom - 1, 1)
+      zoom: Math.max(zoom - 1, 1)
     })
   }
 
@@ -183,19 +186,24 @@ export default class App extends Component {
           {Object.keys(providers).map(key => (
             <button
               key={key}
-              onClick={() => isMapBox(key) && !mapboxEnabled ? window.alert('Mapbox tiles disabled! See issue #33 for details!') : this.setState({ provider: key })}
-              style={{fontWeight: provider === key ? 'bold' : 'normal', color: isMapBox(key) && !mapboxEnabled ? '#aaa' : '#000'}}>
+              onClick={() => isMapBox(key) && !mapboxEnabled
+                              ? window.alert('Mapbox tiles disabled! See issue #33 for details!')
+                              : updateValues({ provider: key })}
+              style={{
+                fontWeight: provider === key ? 'bold' : 'normal',
+                color: isMapBox(key) && !mapboxEnabled ? '#aaa' : '#000'
+              }}>
               {key}
             </button>
           ))}
         </div>
         <div style={{marginTop: 20}}>
-          <button onClick={() => updateValues({ animate: !animate })}>{animate ? '[X] animation' : '[ ] animation'}</button>
-          <button onClick={() => updateValues({ twoFingerDrag: !twoFingerDrag })}>{twoFingerDrag ? '[X] two finger drag' : '[ ] two finger drag'}</button>
-          <button onClick={() => updateValues({ metaWheelZoom: !metaWheelZoom })}>{metaWheelZoom ? '[X] meta wheel zoom' : '[ ] meta wheel zoom'}</button>
-          <button onClick={() => updateValues({ zoomSnap: !zoomSnap })}>{zoomSnap ? '[X] zoom snap' : '[ ] zoom snap'}</button>
-          <button onClick={() => updateValues({ mouseEvents: !mouseEvents })}>{mouseEvents ? '[X] mouse events' : '[ ] mouse events'}</button>
-          <button onClick={() => updateValues({ touchEvents: !touchEvents })}>{touchEvents ? '[X] touch events' : '[ ] touch events'}</button>
+          <button onClick={() => toggleValue('animate')}>{animate ? '[X] animation' : '[ ] animation'}</button>
+          <button onClick={() => toggleValue('twoFingerDrag')}>{twoFingerDrag ? '[X] two finger drag' : '[ ] two finger drag'}</button>
+          <button onClick={() => toggleValue('metaWheelZoom')}>{metaWheelZoom ? '[X] meta wheel zoom' : '[ ] meta wheel zoom'}</button>
+          <button onClick={() => toggleValue('zoomSnap')}>{zoomSnap ? '[X] zoom snap' : '[ ] zoom snap'}</button>
+          <button onClick={() => toggleValue('mouseEvents')}>{mouseEvents ? '[X] mouse events' : '[ ] mouse events'}</button>
+          <button onClick={() => toggleValue('touchEvents')}>{touchEvents ? '[X] touch events' : '[ ] touch events'}</button>
         </div>
         <div style={{marginTop: 20}}>
           minZoom: <input onChange={(e) => updateValues({ minZoom: parseInt(e.target.value) || 1 })} value={minZoom} type='number' style={{ width: 40 }} />

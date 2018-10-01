@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 
 export default kea({
   actions: () => ({
-    updateValues: (values) => ({ values })
+    updateValues: (values) => ({ values }),
+    toggleValue: (key) => ({ key })
   }),
 
   reducers: ({ actions }) => ({
@@ -21,7 +22,8 @@ export default kea({
       minZoom: 1,
       maxZoom: 18
     }, PropTypes.object, {
-      [actions.updateValues]: (state, payload) => ({ ...state, ...payload.values })
+      [actions.updateValues]: (state, payload) => ({ ...state, ...payload.values }),
+      [actions.toggleValue]: (state, payload) => ({ ...state, [payload.key]: !state[payload.key] })
     }]
   })
 })
