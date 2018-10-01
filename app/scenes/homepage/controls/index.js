@@ -107,9 +107,6 @@ export default class Controls extends Component {
             <button key={key} onClick={() => updateValues({ center: markers[key][0], zoom: markers[key][1] })}>{key}</button>
           ))}
         </div>
-        <div style={{marginTop: 20}}>
-          <a href='https://github.com/mariusandra/pigeon-maps'>Documentation and more on GitHub</a>
-        </div>
       </div>
     )
   }

@@ -77,8 +77,8 @@ export default class MapDemo extends Component {
     const { provider } = values
 
     return (
-      <div style={{textAlign: 'center', marginTop: 50}}>
-        <div style={{maxWidth: 600, margin: '0 auto'}}>
+      <div style={{ textAlign: 'center', marginTop: 50 }}>
+        <div style={{ maxWidth: 600, margin: '0 auto' }}>
           <Map
             {...values}
             provider={providers[provider]}
