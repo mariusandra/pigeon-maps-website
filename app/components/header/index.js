@@ -11,7 +11,7 @@ export default class Header extends Component {
         <nav>
           <NavLink to='/' exact>Pigeon Maps</NavLink>
 
-          <a className='right' href='https://www.github.com/keajs/kea-example' target='_blank'>Fork on Github</a>
+          <a className='right' href='https://www.github.com/mariusandra/pigeon-maps' target='_blank'>Fork on Github</a>
         </nav>
       </header>
     )
