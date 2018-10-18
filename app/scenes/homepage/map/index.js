@@ -32,6 +32,29 @@ const WikimediaAttribution = () => (
   </span>
 )
 
+const DivMarker = ({ left, top, style, children }) => (
+  <div style={{
+    position: 'absolute',
+    left: left,
+    top: top,
+    ...(style || {})
+  }}>{children}</div>
+)
+
+const YellowMarker = ({ left, top, style, children }) => (
+  <div style={{
+    position: 'absolute',
+    left: left - 15,
+    top: top - 30,
+    width: 30,
+    height: 30,
+    borderBottomLeftRadius: '100%',
+    borderBottomRightRadius: '100%',
+    background: 'yellow',
+    ...(style || {})
+  }}>{children}</div>
+)
+
 @connect({
   props: [
     logic, [

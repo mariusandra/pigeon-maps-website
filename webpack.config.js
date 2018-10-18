@@ -48,7 +48,7 @@ var config = {
         loader: 'babel-loader'
       },
       {
-        test: /\.(png|jpg)$/,
+        test: /\.(png|jpg|svg)$/,
         // inline base64 URLs for <=8k images, direct URLs for the rest
         loader: 'url-loader?limit=8192'
       }
