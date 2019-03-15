@@ -7,7 +7,9 @@
     "test": "jest",
     "start": "./node_modules/.bin/webpack-dev-server --history-api-fallback --hot --port 2000",
     "build": "NODE_ENV=production ./node_modules/.bin/webpack --progress",
-    "prerender": "NODE_ENV=production node prerender.js"
+    "prerender": "NODE_ENV=production node prerender.js",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
   },
   "repository": {
     "type": "git",
@@ -34,7 +36,7 @@
     "kea-localstorage": "^0.2.0",
     "kea-saga": "^0.3.2",
     "nprogress": "^0.2.0",
-    "pigeon-maps": "^0.11.1",
+    "pigeon-maps": "^0.11.11",
     "pigeon-marker": "^0.3.4",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
@@ -76,6 +78,7 @@
     "precss": "^2.0.0",
     "puppeteer": "^1.8.0",
     "react-hot-loader": "1.3.1",
+    "react-styleguidist": "^8.0.3",
     "react-transform-hmr": "^1.0.4",
     "redux-devtools": "^3.4.1",
     "style-loader": "^0.20.1",
