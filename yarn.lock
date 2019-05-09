@@ -6156,9 +6156,9 @@ pify@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/pify/-/pify-3.0.0.tgz#e5a4acd2c101fdf3d9a4d07f0dbc4db49dd28176"
 
-pigeon-maps@^0.11.11:
-  version "0.11.11"
-  resolved "https://registry.yarnpkg.com/pigeon-maps/-/pigeon-maps-0.11.11.tgz#a263f1faa733bee0dcde9513118dd491cd5a975e"
+pigeon-maps@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/pigeon-maps/-/pigeon-maps-0.13.0.tgz#03bbf941c4a4e42bc7b13865f97c3d41d085ce8f"
 
 pigeon-marker@^0.3.4:
   version "0.3.4"

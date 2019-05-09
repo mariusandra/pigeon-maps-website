@@ -80,7 +80,7 @@ export default class Controls extends Component {
               key={key}
               onClick={() => isMapBox(key) && !mapboxEnabled
                               ? window.alert('Mapbox tiles disabled! See issue #33 for details!')
-                              : updateValues({ provider: key })}
+                              : updateValues({ provider: key, dprs: key === 'osm' ? [] : [1, 2] })}
               style={{
                 fontWeight: provider === key ? 'bold' : 'normal',
                 color: isMapBox(key) && !mapboxEnabled ? '#aaa' : '#000'

@@ -20,7 +20,8 @@ export default kea({
       mouseEvents: true,
       touchEvents: true,
       minZoom: 1,
-      maxZoom: 18
+      maxZoom: 18,
+      dprs: [1, 2]
     }, PropTypes.object, {
       [actions.updateValues]: (state, payload) => ({ ...state, ...payload.values }),
       [actions.toggleValue]: (state, payload) => ({ ...state, [payload.key]: !state[payload.key] })
