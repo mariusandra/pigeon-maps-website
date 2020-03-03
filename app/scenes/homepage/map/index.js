@@ -8,27 +8,9 @@ import { providers, markers } from '../config'
 
 import logic from '../logic'
 
-function isMapBox (provider) {
-  return provider === 'streets' || provider === 'satellite' || provider === 'outdoors' || provider === 'light' || provider === 'dark'
-}
-
-const MapboxAttribution = () => (
-  <span className='map-attribution'>
-    <span>© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a></span>{' | '}
-    <span>© <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a></span>{' | '}
-    <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>
-  </span>
-)
-
 const StamenAttribution = () => (
   <span className='map-attribution'>
     Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.
-  </span>
-)
-
-const WikimediaAttribution = () => (
-  <span className='map-attribution'>
-    Map tiles by <a href='https://foundation.wikimedia.org/w/index.php?title=Maps_Terms_of_Use#Where_does_the_map_data_come_from.3F'>Wikimedia</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>
   </span>
 )
 
@@ -109,20 +91,16 @@ export default class MapDemo extends Component {
             onClick={this.handleClick}
             onAnimationStart={this.handleAnimationStart}
             onAnimationStop={this.handleAnimationStop}
+            dprs={provider === 'osm' ? [1] : [1, 2]}
             attribution={
-              isMapBox(provider)
-                ? <MapboxAttribution />
-                : provider === 'stamen'
-                  ? <StamenAttribution />
-                  : provider === 'wikimedia'
-                    ? <WikimediaAttribution />
-                    : null}
+              provider === 'stamenToner' || provider === 'stamenTerrain'
+                ? <StamenAttribution />
+                : null}
             defaultWidth={600}
             height={400}>
             {Object.keys(markers).map(key => (
               <Marker key={key} anchor={markers[key][0]} payload={key} onClick={this.handleMarkerClick} />
             ))}
-            {isMapBox(provider) && <span className='mapbox-wordmark' />}
           </Map>
         </div>
       </div>

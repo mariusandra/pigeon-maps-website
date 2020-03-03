@@ -11,7 +11,7 @@ export default kea({
     values: [{
       center: [50.879, 4.6997],
       zoom: 13,
-      provider: 'wikimedia',
+      provider: 'osm',
       metaWheelZoom: false,
       twoFingerDrag: false,
       animate: true,
