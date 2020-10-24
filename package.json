@@ -36,7 +36,7 @@
     "kea-localstorage": "^0.2.0",
     "kea-saga": "^0.3.2",
     "nprogress": "^0.2.0",
-    "pigeon-maps": "^0.15.0",
+    "pigeon-maps": "^0.16.1",
     "pigeon-marker": "^0.3.4",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
