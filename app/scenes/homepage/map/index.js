@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'kea'
 
-import Map from 'pigeon-maps'
-import Marker from 'pigeon-marker'
+import { Map, Marker } from 'pigeon-maps'
 
 import { providers, markers } from '../config'
 
