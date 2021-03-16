@@ -1,7 +1,7 @@
 {
   "name": "pigeon-maps-website",
   "version": "0.0.1",
-  "description": "Kea example app",
+  "description": "Pigeon Maps Website",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/keajs/kea-example.git"
+    "url": "git+https://github.com/mariusandra/pigeon-maps-website.git"
   },
   "author": "Write your name here",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/keajs/kea-example/issues"
+    "url": "https://github.com/mariusandra/pigeon-maps-website/issues"
   },
-  "homepage": "https://github.com/keajs/kea-example#readme",
+  "homepage": "https://github.com/mariusandra/pigeon-maps-website#readme",
   "jest": {
     "moduleNameMapper": {
       "^~": "<rootDir>/app",
@@ -36,7 +36,7 @@
     "kea-localstorage": "^0.2.0",
     "kea-saga": "^0.3.2",
     "nprogress": "^0.2.0",
-    "pigeon-maps": "^0.17.1",
+    "pigeon-maps": "^0.17.2",
     "prop-types": "^15.6.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
