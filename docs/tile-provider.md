@@ -1,5 +1,5 @@
 ---
-title: Tile Provider
+title: Choosing a Tile Provider
 ---
 
 Pigeon Maps defaults to loading map tiles from [OpenStreetMap.org](https://www.openstreetmap.org/). While free (thanks to volunteers and donations), these OSM tiles aren't the best looking visually.

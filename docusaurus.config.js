@@ -24,7 +24,7 @@ module.exports = {
           position: 'left',
         },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/mariusandra/pigeon-maps',
           label: 'GitHub',
           position: 'right',
         },
