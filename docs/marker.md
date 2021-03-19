@@ -2,8 +2,9 @@
 title: Marker
 ---
 
-
 import {MyMap} from './demos/marker.js' 
+
+Add simple markers.
 
 ### Example
 

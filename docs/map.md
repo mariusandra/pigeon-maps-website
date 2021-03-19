@@ -4,6 +4,8 @@ title: Map
 
 import {MyMap} from './demos/map.js' 
 
+The main map component.
+
 ### Example
 
 <MyMap />
@@ -84,18 +86,6 @@ What to show as an [attribution](https://www.openstreetmap.org/copyright). React
 #### attributionPrefix
 Prefix before attribution. React node or `false` to hide.
 
-#### onClick
-When map is clicked `function ({ event, latLng, pixel })``
-
-#### onBoundsChanged
-When the bounds change, `function ({ center, zoom, bounds, initial })`. Use this for a controlled component, then set `center` and `zoom` when it's called. This callback also gets called on the initial mount (when the first bounds become known). In this case the prop `initial` will be set to `true`. It will be `false` on all subsequent calls.
-
-#### onAnimationStart
-Called when the map starts moving
-
-#### onAnimationStop
-Called when the map stops moving
-
 #### mouseEvents
 Can the user interact with the map with the mouse? Defaults to `true`.
 
@@ -119,3 +109,17 @@ The `z-index` value for the meta warning. Defaults to `100`
 
 #### boxClassname
 The classname for the tiles div, allowing you to style it with a filter css property without impacting the overlays.
+
+### Events
+
+#### onClick
+When map is clicked `function ({ event, latLng, pixel })`
+
+#### onBoundsChanged
+When the bounds change, `function ({ center, zoom, bounds, initial })`. Use this for a controlled component, then set `center` and `zoom` when it's called. This callback also gets called on the initial mount (when the first bounds become known). In this case the prop `initial` will be set to `true`. It will be `false` on all subsequent calls.
+
+#### onAnimationStart
+Called when the map starts moving
+
+#### onAnimationStop
+Called when the map stops moving
