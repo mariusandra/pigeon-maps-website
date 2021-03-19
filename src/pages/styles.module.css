@@ -6,22 +6,38 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
-  text-align: center;
+  padding: 4rem 2rem;
+  text-align: left;
   position: relative;
   overflow: hidden;
+  color: white;
 }
 
 @media screen and (max-width: 966px) {
   .heroBanner {
-    padding: 2rem;
+    padding: 2rem 1rem;
   }
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.map {
+  margin: 0 auto;
+  height: 400px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 4px 4px;
+}
+
+.mapControls {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--ifm-color-primary-lighter);
+}
+[data-theme=dark] .mapControls {
+  background: var(--ifm-color-primary-darker);
+  color: var(--ifm-color-content-secondary);
+}
+
+.mapCheckbox {
+  margin-left: 8px;
+  padding: 2px;
 }
 
 .features {
