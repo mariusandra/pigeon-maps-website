@@ -2,7 +2,7 @@
 module.exports = {
   title: 'Pigeon Maps',
   tagline: 'ReactJS maps without external dependencies',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://pigeon-maps.js.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -55,13 +55,13 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            'https://github.com/mariusandra/pigein-maps-website/edit/master/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+            'https://github.com/mariusandra/pigein-maps-website/docusaurus/edit/master/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
