@@ -1,6 +1,2 @@
-node_modules
-static
-npm-debug.log
-.DS_Store
-update.sh
 .idea
+
