@@ -3,11 +3,11 @@ module.exports = {
     {
       type: "category",
       label: "Getting Started",
-      items: ["installation"],
+      items: ["introduction", "installation", "tile-provider"],
     },
     {
       type: "category",
-      label: "Components",
+      label: "Core Components",
       items: ["map", "marker", "overlay", "zoom-control"],
     },
   ],
