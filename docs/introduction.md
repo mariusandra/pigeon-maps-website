@@ -11,7 +11,7 @@ This project aims to provide a performance-first React-centric extendable map en
 
 It was originally created to reduce page load speed for the search results on [Apprentus](https://www.apprentus.com/), a marketplace for private lessons.
 
-We're currently at:
+We're currently at (this includes all components):
 - [![minified](https://badgen.net/bundlephobia/min/pigeon-maps)](https://bundlephobia.com/result?p=pigeon-maps)
 - [![minified + gzipped](https://badgen.net/bundlephobia/minzip/pigeon-maps)](https://bundlephobia.com/result?p=pigeon-maps)
 
@@ -32,6 +32,11 @@ Implemented:
 - Option to block dragging with one finger and mouse wheel scrolling without holding meta key
 - Enable/disable touch and mouse events as needed - you could make a 100% static server rendered react map
 - Support for 100% width/height containers
+- Markers
+- Overlays
+- Draggable Overlays
+- Zoom Controls
 
 Missing:
 - Double tap and then swipe touch zooming
+- Many other components
