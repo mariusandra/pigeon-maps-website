@@ -4,7 +4,7 @@ title: Marker
 
 import {MyMap} from './demos/marker.js' 
 
-Position a marker.
+Click the marker to change its color.
 
 ### Example
 

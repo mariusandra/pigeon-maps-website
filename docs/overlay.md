@@ -31,7 +31,7 @@ export function MyMap() {
 At which coordinates `[lat, lng]` to anchor the overlay with the map.
 
 #### offset
-Offset in pixels relative to the anchor.
+Offset in pixels `[x, y]` relative to the anchor.
 
 ### Attribution
 

@@ -4,7 +4,7 @@ import Layout from "@theme/Layout";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./styles.module.css";
 
-import { Map, Marker, Overlay, ZoomControl } from "pigeon-maps";
+import { Map, Marker, Draggable, ZoomControl } from "pigeon-maps";
 import * as providers from "pigeon-maps/providers";
 import { PigeonIcon } from "../assets/PigeonIcon";
 
@@ -153,8 +153,9 @@ export default function Home() {
                   width={29 + 10 * index}
                 />
               ))}
-              <Overlay
+              <Draggable
                 anchor={state.dragAnchor}
+                onDragEnd={(dragAnchor) => setState({ dragAnchor })}
                 offset={[60, 87]}
                 style={{
                   clipPath:
@@ -162,7 +163,7 @@ export default function Home() {
                 }}
               >
                 <PigeonIcon width={100} height={95} />
-              </Overlay>
+              </Draggable>
               <ZoomControl />
             </Map>
             <div className={styles.mapControls}>

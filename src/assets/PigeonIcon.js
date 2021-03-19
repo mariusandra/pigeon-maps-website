@@ -1,10 +1,11 @@
 import React from "react";
 
-export function PigeonIcon({ width = 100, height = 95 }) {
+export function PigeonIcon({ width = 100, height = 95, style = {} }) {
   return (
     <svg
       width={width}
       height={height}
+      style={style}
       viewBox="50 431 439 415"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
