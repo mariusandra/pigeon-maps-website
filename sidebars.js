@@ -2,13 +2,13 @@ module.exports = {
   docs: [
     {
       type: "category",
-      label: "Installation",
-      items: ["getting-started"],
+      label: "Getting Started",
+      items: ["installation"],
     },
     {
       type: "category",
       label: "Components",
-      items: ["map", "marker", "overlay"],
+      items: ["map", "marker", "overlay", "zoom-control"],
     },
   ],
 };

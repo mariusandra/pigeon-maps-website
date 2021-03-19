@@ -4,7 +4,7 @@ title: Marker
 
 import {MyMap} from './demos/marker.js' 
 
-Add simple markers.
+Position a marker.
 
 ### Example
 
@@ -13,12 +13,12 @@ Add simple markers.
 ### Code
 
 ```js
-import React, { useState } from "react";
-import { Map, Marker } from "pigeon-maps";
+import React, { useState } from "react"
+import { Map, Marker } from "pigeon-maps"
 
 export function MyMap() {
-  const [hue, setHue] = useState(0);
-  const color = `hsl(${hue % 360}deg 39% 70%)`;
+  const [hue, setHue] = useState(0)
+  const color = `hsl(${hue % 360}deg 39% 70%)`
 
   return (
     <Map height={300} defaultCenter={[50.879, 4.6997]} defaultZoom={11}>
@@ -28,7 +28,7 @@ export function MyMap() {
         onClick={() => setHue(hue + 20)} 
       />
     </Map>
-  );
+  )
 }
 ```
 

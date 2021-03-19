@@ -19,7 +19,7 @@ export function MyMap() {
   return (
     <Map height={300} defaultCenter={[50.879, 4.6997]} defaultZoom={11}>  
       <Overlay anchor={[50.879, 4.6997]} offset={[120, 79]}>
-        <img src='pigeon.jpg' width={240} height={158} alt='' />
+        <img src='/img/pigeon.jpg' width={240} height={158} alt='' />
       </Overlay>
     </Map>
   )

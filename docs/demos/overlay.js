@@ -1,6 +1,5 @@
 import React from "react";
 import { Map, Overlay } from "pigeon-maps";
-import { useBaseUrl } from "@docusaurus/useBaseUrl";
 
 export function MyMap() {
   return (
