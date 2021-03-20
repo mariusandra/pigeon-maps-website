@@ -56,7 +56,7 @@ export default function Home() {
   const [state, setRawState] = useState({
     center: [50.1102, 3.1506],
     zoom: 6,
-    provider: "osm",
+    provider: "maptiler",
     metaWheelZoom: false,
     twoFingerDrag: false,
     animate: true,
@@ -108,6 +108,11 @@ export default function Home() {
     setState({ animating: false });
   };
 
+  let providerFunction = providers[provider];
+  if (provider === "maptiler") {
+    providerFunction = providerFunction("wrAA6s63uzhKow7wUsFT", "streets");
+  }
+
   return (
     <Layout
       title="Demo"
@@ -122,8 +127,8 @@ export default function Home() {
               limitBounds="edge"
               center={center}
               zoom={zoom}
-              provider={providers[provider]}
-              dprs={[1, 2]}
+              provider={providerFunction}
+              dprs={provider === "osm" ? [1] : [1, 2]}
               onBoundsChanged={handleBoundsChange}
               onClick={handleClick}
               onAnimationStart={handleAnimationStart}

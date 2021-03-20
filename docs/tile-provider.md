@@ -105,3 +105,30 @@ return (
   />
 )
 ```
+
+### maptiler
+
+Nice looking commercial maps from [MapTiler](https://www.maptiler.com/). You get 100k tiles for free, so it's a no-brainer
+for websites with limited traffic.
+
+Pass the API key and the [basemap type](https://www.maptiler.com/maps) (e.g. `streets`, `basic`, `topo`, etc) to the imported function.
+
+<Map provider={providers.maptiler('wrAA6s63uzhKow7wUsFT', 'streets')} height={200} dprs={[1, 2]} defaultCenter={[50.879, 4.6997]} defaultZoom={11} metaWheelZoom twoFingerDrag><ZoomControl /></Map>
+
+```js
+import React from 'react'
+import { Map } from 'pigeon-maps'
+import { maptiler } from 'pigeon-maps/providers'
+
+const maptilerProvider = maptiler('MY_API_KEY', 'streets')
+
+return (
+  <Map
+    provider={maptilerProvider}
+    dprs={[1, 2]} // this provider supports HiDPI tiles
+    height={200}
+    defaultCenter={[50.879, 4.6997]}
+    defaultZoom={11}
+  />
+)
+```
