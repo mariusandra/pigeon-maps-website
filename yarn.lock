@@ -6986,10 +6986,10 @@ pify@^4.0.1:
   resolved "https://registry.yarnpkg.com/pify/-/pify-4.0.1.tgz#4b2cd25c50d598735c50292224fd8c6df41e3231"
   integrity sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==
 
-pigeon-maps@^0.19.4:
-  version "0.19.4"
-  resolved "https://registry.yarnpkg.com/pigeon-maps/-/pigeon-maps-0.19.4.tgz#41202d45a2e13882a8de8aa286df162e79350af6"
-  integrity sha512-yCBzHshNeDRp6UQi9+il40vNJIGmDjpNAlk8dfd3OwvnG4A+6Jy/kX8/54BxCVE7dKKRIvjr0OWtpEwb5gmz1Q==
+pigeon-maps@^0.19.5:
+  version "0.19.5"
+  resolved "https://registry.yarnpkg.com/pigeon-maps/-/pigeon-maps-0.19.5.tgz#85994da6047a370490ab8cac13da7b4021cfd4a6"
+  integrity sha512-iYduk1f3FlIVCnHLk1hR6tzpwQVGFogTJYJSn8klOEBrRee31lgMsHHFGBvrGJBDZF6aLDvetLRc6/IJmSY0WQ==
 
 pinkie-promise@^2.0.0:
   version "2.0.1"
