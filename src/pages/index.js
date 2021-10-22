@@ -56,7 +56,7 @@ export default function Home() {
   const [state, setRawState] = useState({
     center: [50.1102, 3.1506],
     zoom: 6,
-    provider: "maptiler",
+    provider: "osm",
     metaWheelZoom: false,
     twoFingerDrag: false,
     animate: true,
