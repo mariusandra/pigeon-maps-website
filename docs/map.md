@@ -110,6 +110,33 @@ The `z-index` value for the meta warning. Defaults to `100`
 #### boxClassname
 The classname for the tiles div, allowing you to style it with a filter css property without impacting the overlays.
 
+#### tileComponent
+This component renders the actual `<img />` tile. Takes two props: `tile` for the actual tile data, and `tileLoaded`, which is a function that *must* be called after your tile loads. Feel free to call it via `useEffect(tileLoaded, [])` if your tile has no async loading logic.
+
+Defaults to `ImgTile`:
+
+```ts
+const ImgTile: TileComponent = ({ tile, tileLoaded }) => (
+  <img
+    src={tile.url}
+    srcSet={tile.srcSet}
+    width={tile.width}
+    height={tile.height}
+    loading={'lazy'}
+    onLoad={tileLoaded}
+    alt={''}
+    style={{
+      position: 'absolute',
+      left: tile.left,
+      top: tile.top,
+      willChange: 'transform',
+      transformOrigin: 'top left',
+      opacity: 1,
+    }}
+  />
+)
+```
+
 ### Events
 
 #### onClick
