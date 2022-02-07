@@ -8,7 +8,7 @@ module.exports = {
     {
       type: "category",
       label: "Core Components",
-      items: ["map", "marker", "overlay", "draggable", "zoom-control"],
+      items: ["map", "marker", "overlay", "draggable", "zoom-control", "geo-json", "geo-json-loader"],
     },
   ],
 };
