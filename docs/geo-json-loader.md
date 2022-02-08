@@ -4,7 +4,8 @@ title: GeoJsonLoader
 
 import {MyMap} from './demos/geoJsonLoader.js'
 
-Renders GeoJson file.
+Renders GeoJson file. This component is intended to easily use external GeoJson files. But it does not handle loading errors at all.
+So you should rather use the `GeoJson` component in production.
 
 ### Example
 

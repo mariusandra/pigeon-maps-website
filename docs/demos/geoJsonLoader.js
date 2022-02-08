@@ -1,5 +1,5 @@
 import React from "react";
-import { Map, GeoJsonLoader, GeoJson } from "pigeon-maps";
+import { Map, GeoJsonLoader } from "pigeon-maps";
 
 const geoJsonSample = {
   type: "FeatureCollection",
@@ -22,20 +22,6 @@ export function MyMap() {
             ? { fill: "#93c0d099", strokeWidth: "2", stroke: "white" }
             : { fill: "#d4e6ec99", strokeWidth: "1", stroke: "white", r: "20" }
         }
-      />
-      <GeoJson
-        data={geoJsonSample}
-        styleCallback={(feature, hover) => {
-          if (feature.geometry.type === "LineString") {
-            return { strokeWidth: "1", stroke: "black" };
-          }
-          return {
-            fill: "#d4e6ec99",
-            strokeWidth: "1",
-            stroke: "white",
-            r: "20",
-          };
-        }}
       />
     </Map>
   );
