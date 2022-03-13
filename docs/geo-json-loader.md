@@ -21,7 +21,7 @@ const geoJsonLink = "https://raw.githubusercontent.com/isellsoap/deutschlandGeoJ
 const MyMap = () => (
     <Map height={300} defaultCenter={[50.879, 4.6997]} defaultZoom={4}>
       <GeoJsonLoader
-        link={geoJsonLink}"
+        link={geoJsonLink}
         styleCallback={(feature, hover) =>
           hover
             ? { fill: '#93c0d099', strokeWidth: '2'}

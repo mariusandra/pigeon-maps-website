@@ -4,7 +4,7 @@ import Layout from "@theme/Layout";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./styles.module.css";
 
-import { Map, Marker, Draggable, ZoomControl } from "pigeon-maps";
+import {Map, Marker, Draggable, ZoomControl, GeoJsonLoader} from "pigeon-maps";
 import * as providers from "pigeon-maps/providers";
 import { PigeonIcon } from "../assets/PigeonIcon";
 
@@ -169,6 +169,14 @@ export default function Home() {
               >
                 <PigeonIcon width={100} height={95} />
               </Draggable>
+              <GeoJsonLoader
+                link="https://raw.githubusercontent.com/isellsoap/deutschlandGeoJSON/main/2_bundeslaender/4_niedrig.geo.json"
+                styleCallback={(feature, hover) =>
+                  hover
+                    ? { fill: "#93c0d099", strokeWidth: "2", stroke: "white" }
+                    : { fill: "#d4e6ec99", strokeWidth: "1", stroke: "white", r: "20" }
+                }
+              />
               <ZoomControl />
             </Map>
             <div className={styles.mapControls}>
