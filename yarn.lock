@@ -5534,10 +5534,10 @@ picomatch@^2.0.4, picomatch@^2.2.1, picomatch@^2.2.3:
   resolved "https://registry.npmjs.org/picomatch/-/picomatch-2.3.1.tgz#3ba3833733646d9d3e4995946c1365a67fb07a42"
   integrity sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==
 
-pigeon-maps@^0.20.0:
-  version "0.20.0"
-  resolved "https://registry.npmjs.org/pigeon-maps/-/pigeon-maps-0.20.0.tgz#2b619a205c543691ba8395c4856ba721014e46e5"
-  integrity sha512-aBAibTi0GCNvdrbcI02u+Ac+lqDK+EEquhBnhtFcR5qE8jzKTp4bZoY3CubAqAxFhywJRMAfumC06j8VYoKlDw==
+pigeon-maps@^0.21.0:
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/pigeon-maps/-/pigeon-maps-0.21.0.tgz#eb757acfe4b75234cba63c2c5e87e42c410de4b3"
+  integrity sha512-p3GaGday5nmufHVGZW/36LnSXfYVh6qfzYisqcC87nqFr0eXIKkqQcDuPP9g4F1OXL1JeJe4x6JEnAE9HB+zWQ==
 
 pkg-dir@^4.1.0:
   version "4.2.0"
