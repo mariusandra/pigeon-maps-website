@@ -55,13 +55,13 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/mariusandra/pigein-maps-website/edit/master/',
+            'https://github.com/mariusandra/pigeon-maps-website/edit/master/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/mariusandra/pigein-maps-website/docusaurus/edit/master/blog/',
+            'https://github.com/mariusandra/pigeon-maps-website/docusaurus/edit/master/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
