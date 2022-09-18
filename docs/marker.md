@@ -28,6 +28,14 @@ export function MyMap() {
         color={color} 
         onClick={() => setHue(hue + 20)} 
       />
+      <Marker 
+        width={50}
+        anchor={[50.879, 4.6997]} 
+        color={color} 
+        onClick={() => setHue(hue + 20)} 
+      >
+          <CustomIcon />
+      </Marker>
     </Map>
   )
 }
@@ -46,6 +54,9 @@ Random payload that will be returned on events.
 
 #### hover
 Should we show the "hover" state of the marker? Default: `undefined`
+
+#### children
+
 
 ### Events
 

@@ -4,7 +4,14 @@ import Layout from "@theme/Layout";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./styles.module.css";
 
-import {Map, Marker, Draggable, ZoomControl, GeoJsonLoader} from "pigeon-maps";
+import {
+  Map,
+  Marker,
+  Draggable,
+  ZoomControl,
+  GeoJson,
+  GeoJsonLoader,
+} from "pigeon-maps";
 import * as providers from "pigeon-maps/providers";
 import { PigeonIcon } from "../assets/PigeonIcon";
 
@@ -14,6 +21,83 @@ const markers = {
   brussels: [[50.8505, 4.35149], 11],
   ghent: [[51.0514, 3.7103], 12],
   coast: [[51.2214, 2.9541], 10],
+};
+
+const geoJsonSample = {
+  type: "FeatureCollection",
+  features: [
+    {
+      type: "Feature",
+      geometry: { type: "Point", coordinates: [2.0, 48.5] },
+      properties: { prop0: "value0" },
+    },
+    {
+      type: "Feature",
+      geometry: {
+        type: "LineString",
+        coordinates: [
+          [2.0, 48.0],
+          [3.0, 49.0],
+          [4.0, 48.0],
+          [5.0, 49.0],
+        ],
+      },
+      properties: {
+        prop0: "value0",
+        prop1: 0.0,
+      },
+    },
+    {
+      type: "Feature",
+      geometry: {
+        type: "Polygon",
+        coordinates: [
+          [
+            [0.0, 48.0],
+            [1.0, 48.0],
+            [1.0, 49.0],
+            [0.0, 49.0],
+            [0.0, 48.0],
+          ],
+        ],
+      },
+      properties: {
+        prop0: "value0",
+        prop1: { this: "that" },
+      },
+    },
+    {
+      type: "Feature",
+      properties: { name: "yea" },
+      geometry: {
+        type: "GeometryCollection",
+        geometries: [
+          { type: "Point", coordinates: [2.0, 46.5] },
+          {
+            type: "LineString",
+            coordinates: [
+              [2.0, 46.0],
+              [3.0, 47.0],
+              [4.0, 46.0],
+              [5.0, 47.0],
+            ],
+          },
+          {
+            type: "Polygon",
+            coordinates: [
+              [
+                [0.0, 46.0],
+                [1.0, 46.0],
+                [1.0, 47.0],
+                [0.0, 47.0],
+                [0.0, 46.0],
+              ],
+            ],
+          },
+        ],
+      },
+    },
+  ],
 };
 
 const StamenAttribution = () => (
@@ -174,8 +258,27 @@ export default function Home() {
                 styleCallback={(feature, hover) =>
                   hover
                     ? { fill: "#93c0d099", strokeWidth: "2", stroke: "white" }
-                    : { fill: "#d4e6ec99", strokeWidth: "1", stroke: "white", r: "20" }
+                    : {
+                        fill: "#d4e6ec99",
+                        strokeWidth: "1",
+                        stroke: "white",
+                        r: "20",
+                      }
                 }
+              />
+              <GeoJson
+                data={geoJsonSample}
+                styleCallback={(feature, hover) => {
+                  if (feature.geometry.type === "LineString") {
+                    return { strokeWidth: "1", stroke: "black" };
+                  }
+                  return {
+                    fill: "#ff000099",
+                    strokeWidth: "1",
+                    stroke: "white",
+                    r: "4",
+                  };
+                }}
               />
               <ZoomControl />
             </Map>
