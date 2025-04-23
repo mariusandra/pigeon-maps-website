@@ -233,13 +233,12 @@ export default function Home() {
               defaultWidth={600}
               height={400}
             >
-              {Object.keys(markers).map((key, index) => (
+              {Object.keys(markers).map((key) => (
                 <Marker
                   key={key}
                   anchor={markers[key][0]}
                   payload={key}
                   onClick={handleMarkerClick}
-                  width={29 + 10 * index}
                 />
               ))}
               <Draggable
